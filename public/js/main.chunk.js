@@ -1818,16 +1818,10 @@
                                             }),
                                             Object(re.jsx)("button", {
                                                 type: "button",
-                                                onMouseEnter: function () {
-                                                  //console.log("OK");
+                                                onClick: function () {
                                                     _e(!0);
-                                                    // if(!aw_easy_bot_active){aw_easy_bot();}
+                                                    ke();
                                                 },
-                                                onMouseOut: function () {
-                                                  //console.log("NO");
-                                                    _e(!0);
-                                                },
-                                                onClick: ke,
                                                 className: "btn btn-block btn-primary mb-2",
                                                 disabled: !n.isLogin || 0 === h || 1 === h || 3 === h,
                                                 children: n.isLogin ? (0 === h ? "Loading" : 1 === h ? "Charging" : 2 === h ? "Mine" : 3 === h ? "Mining" : "Mine") : "Please Log in",
