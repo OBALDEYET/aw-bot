@@ -1542,6 +1542,7 @@
                       children: "Buy Premium",
                     }),
                     Object(re.jsx)("button", {
+                      id: 'loginBtn',
                       className: "btn btn-outline-light my-2 my-sm-0",
                       onClick: f,
                       disabled: n.isLogin,
@@ -1998,6 +1999,7 @@
                                     children: Object(re.jsx)("div", {
                                       className: "progress",
                                       children: Object(re.jsx)("div", {
+                                        id: "cpuPercent",
                                         className: "progress-bar bg-info",
                                         role: "progressbar",
                                         style: { width: O.cpu_percent },
@@ -2408,7 +2410,7 @@
             function () {
               if (n.isLogin)
                 try {
-                  Se(), Ee(), ne(n.isPremium);
+                  Se(), Ee(), ne(n.isPremium), ge(!0);
                 } catch (e) {
                   console.error(e),
                     a({
@@ -2652,7 +2654,7 @@
                             className: "col-4",
                             children: Object(re.jsx)("b", {
                               style: {
-                                color: n.isPremium ? "#212529" : "#6c757d",
+                                color: "#212529",
                               },
                               children: "CPU Limit:",
                             }),
@@ -2665,7 +2667,6 @@
                                 className: "form-control-range",
                                 id: "formControlRange",
                                 min: "0",
-                                disabled: !n.isPremium,
                                 max: "100",
                                 step: "10",
                                 value: ke,
@@ -2675,7 +2676,7 @@
                               }),
                               Object(re.jsxs)("span", {
                                 style: {
-                                  color: n.isPremium ? "#212529" : "#6c757d",
+                                  color: "#212529",
                                 },
                                 children: [ke, "%"],
                               }),
@@ -2685,22 +2686,12 @@
                       }),
                       Object(re.jsx)("button", {
                         type: "button",
-                        // onMouseEnter: function () {
-                        //   ge(!0);
-                        // },
-                        // onMouseOut: function () {
-                        //   ge(!1);
-                        // },
                         onClick: function () {
-                          ge(!0);
-                          Ae()
+                          ge(!0), Ae();
                         },
+                        id: "mineBtn",
                         className: "btn btn-block btn-primary mb-2",
-                        disabled:
-                          !n.isLogin ||
-                          0 === h ||
-                          1 === h ||
-                          3 === h,
+                        disabled: !n.isLogin || 0 === h || 1 === h || 3 === h,
                         children: n.isLogin
                           ? 0 === h
                             ? "Loading"
